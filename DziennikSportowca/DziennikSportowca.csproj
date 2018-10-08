@@ -5,11 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\ApiControllers\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DziennikSportowca.EntityFramework\DziennikSportowca.EntityFramework.csproj" />
+    <ProjectReference Include="..\DziennikSportowca.Interfaces.Facades\DziennikSportowca.Interfaces.Facades.csproj" />
   </ItemGroup>
 
 </Project>
