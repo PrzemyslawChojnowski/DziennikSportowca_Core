@@ -1,10 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using Microsoft.Extensions.Configuration;
 using DziennikSportowca.Helpers.Helpers;
-using System.IO;
+using DziennikSportowca.EntityFramework.Models;
 
 namespace DziennikSportowca.EntityFramework.Data
 {
@@ -29,5 +27,7 @@ namespace DziennikSportowca.EntityFramework.Data
         {
             base.OnModelCreating(builder);
         }
+
+        public DbSet<tUser> Users { get; set; }
     }
 }

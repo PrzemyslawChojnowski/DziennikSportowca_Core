@@ -5,12 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DziennikSportowca.Commons\DziennikSportowca.Commons.csproj" />
     <ProjectReference Include="..\DziennikSportowca.Helpers\DziennikSportowca.Helpers.csproj" />
+    <ProjectReference Include="..\DziennikSportowca.Interfaces.Services\DziennikSportowca.Interfaces.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,13 +23,6 @@
     <Reference Include="System">
       <HintPath>System</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="appsettings.json">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>appsettings.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
 
 </Project>
