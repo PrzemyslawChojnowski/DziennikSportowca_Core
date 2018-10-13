@@ -1,13 +1,18 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
-class UserContainer extends Component {
+class User extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
+        const { currentUser } = this.props;
+        const userName = currentUser
+            ? `${currentUser.firstName} ${currentUser.lastName} (${currentUser.username})`
+            : "Niezalogowany";
         return (
-            <div className="pos-f-t">
+            <div className="float-right">
                 <div className="nav-item dropdown">
                     <a
                         className="nav-link dropdown-toggle"
@@ -17,7 +22,7 @@ class UserContainer extends Component {
                         aria-haspopup="true"
                         aria-expanded="false"
                     >
-                        <i className="far fa-user fa-2x" />
+                        <i className="far fa-user fa-2x" data-toggle="tooltip" title={userName} />
                     </a>
                     <div
                         className="dropdown-menu dropdown-menu-right"
@@ -39,4 +44,11 @@ class UserContainer extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        currentUser: state.authentication.user
+    };
+}
+
+const UserContainer = connect(mapStateToProps)(User);
 export default UserContainer;

@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 import UserContainer from "./UserContainer";
+import NavbarItem from "./NavbarItem";
+import NavbarItemsContainer from "./NavbarItemsContainer";
+import NavbarBrand from "./NavbarBrand";
+import NavbarToggle from "./NavbarToggle";
 
 class Navbar extends Component {
     constructor(props) {
@@ -10,27 +14,13 @@ class Navbar extends Component {
     render() {
         return (
             <div className="pos-f-t">
-                <div className="collapse" id="navbarToggleExternalContent">
-                    <div className="bg-dark p-4">
-                        <h4 className="text-white">Collapsed content</h4>
-                        <span className="text-muted">Toggleable via the navbar brand.</span>
-                    </div>
-                </div>
-                <nav className="navbar navbar-dark bg-dark">
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#navbarToggleExternalContent"
-                        aria-controls="navbarToggleExternalContent"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span className="navbar-toggler-icon" />
-                    </button>
-                    <span className="form-inline">
-                        <UserContainer />
-                    </span>
+                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <NavbarItemsContainer>
+                        <NavbarBrand to="/home">dsa</NavbarBrand>
+                        <NavbarItem to="/register" name="Register" />
+                        <NavbarItem to="/register" name="Register" />
+                    </NavbarItemsContainer>
+                    <UserContainer />
                 </nav>
             </div>
         );
