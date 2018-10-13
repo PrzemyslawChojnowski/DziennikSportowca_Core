@@ -4,6 +4,8 @@ import UserContainer from "./UserContainer";
 import NavbarItem from "./NavbarItem";
 import NavbarItemsContainer from "./NavbarItemsContainer";
 import NavbarBrand from "./NavbarBrand";
+import MenuItem from "../../_components/Menu/MenuItem";
+
 import NavbarToggle from "./NavbarToggle";
 
 class Navbar extends Component {
@@ -20,7 +22,9 @@ class Navbar extends Component {
                         <NavbarItem to="/register" name="Register" />
                         <NavbarItem to="/register" name="Register" />
                     </NavbarItemsContainer>
-                    <UserContainer />
+                    <UserContainer>
+                        <MenuItem name="Wyloguj" action={this.props.logout} />
+                    </UserContainer>
                 </nav>
             </div>
         );

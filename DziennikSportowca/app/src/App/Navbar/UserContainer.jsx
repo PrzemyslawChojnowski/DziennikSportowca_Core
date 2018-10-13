@@ -8,9 +8,10 @@ class User extends Component {
 
     render() {
         const { currentUser } = this.props;
-        const userName = currentUser
-            ? `${currentUser.firstName} ${currentUser.lastName} (${currentUser.username})`
-            : "Niezalogowany";
+        const userName =
+            currentUser && currentUser.firstName && currentUser.lastName && currentUser.username
+                ? `${currentUser.firstName} ${currentUser.lastName} (${currentUser.username})`
+                : "Niezalogowany";
         return (
             <div className="float-right">
                 <div className="nav-item dropdown">
@@ -28,15 +29,7 @@ class User extends Component {
                         className="dropdown-menu dropdown-menu-right"
                         aria-labelledby="navbarDropdownMenuLink"
                     >
-                        <a className="dropdown-item" href="#">
-                            Action
-                        </a>
-                        <a className="dropdown-item" href="#">
-                            Another action
-                        </a>
-                        <a className="dropdown-item" href="#">
-                            Something else here
-                        </a>
+                        {this.props.children}
                     </div>
                 </div>
             </div>
