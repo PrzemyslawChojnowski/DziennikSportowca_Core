@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Navbar extends Component {
     constructor(props) {
@@ -7,17 +7,35 @@ class Navbar extends Component {
 
     render() {
         return (
-            <div class="pos-f-t">
-                <div class="collapse" id="navbarToggleExternalContent">
-                    <div class="bg-dark p-4">
-                        <h4 class="text-white">Collapsed content</h4>
-                        <span class="text-muted">Toggleable via the navbar brand.</span>
+            <div className="pos-f-t">
+                <div className="collapse" id="navbarToggleExternalContent">
+                    <div className="bg-dark p-4">
+                        <h4 className="text-white">Collapsed content</h4>
+                        <span className="text-muted">Toggleable via the navbar brand.</span>
                     </div>
                 </div>
-                <nav class="navbar navbar-dark bg-dark">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                <nav className="navbar navbar-dark bg-dark">
+                    <button
+                        className="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarToggleExternalContent"
+                        aria-controls="navbarToggleExternalContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span className="navbar-toggler-icon" />
                     </button>
+                    <span className="form-inline ">
+                        <input
+                            className="form-control mr-sm-2"
+                            type="search"
+                            placeholder="Search"
+                        />
+                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+                            Search
+                        </button>
+                    </span>
                 </nav>
             </div>
         );

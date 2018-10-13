@@ -1,13 +1,13 @@
-import React from 'react';
-import { Router, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React from "react";
+import { Router, Route } from "react-router-dom";
+import { connect } from "react-redux";
 
-import { history } from '../_helpers';
-import { alertActions } from '../_actions';
-import { PrivateRoute } from '../_components';
-import { HomePage } from '../HomePage';
-import { LoginPage } from '../LoginPage';
-import { RegisterPage } from '../RegisterPage';
+import { history } from "../_helpers";
+import { alertActions } from "../_actions";
+import { PrivateRoute } from "../_components";
+import { HomePage } from "../HomePage";
+import { LoginPage } from "../LoginPage";
+import { RegisterPage } from "../RegisterPage";
 import Navbar from "./Navbar";
 
 class App extends React.Component {
@@ -29,9 +29,9 @@ class App extends React.Component {
                 <div className="jumbotron">
                     <div className="container">
                         <div className="col-sm-8 col-sm-offset-2">
-                            {alert.message &&
+                            {alert.message && (
                                 <div className={`alert ${alert.type}`}>{alert.message}</div>
-                            }
+                            )}
                             <Router history={history}>
                                 <div>
                                     <PrivateRoute exact path="/" component={HomePage} />
@@ -55,4 +55,4 @@ function mapStateToProps(state) {
 }
 
 const connectedApp = connect(mapStateToProps)(App);
-export { connectedApp as App }; 
+export { connectedApp as App };
