@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import UserContainer from "./UserContainer";
+
 class Navbar extends Component {
     constructor(props) {
         super(props);
@@ -26,15 +28,8 @@ class Navbar extends Component {
                     >
                         <span className="navbar-toggler-icon" />
                     </button>
-                    <span className="form-inline ">
-                        <input
-                            className="form-control mr-sm-2"
-                            type="search"
-                            placeholder="Search"
-                        />
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-                            Search
-                        </button>
+                    <span className="form-inline">
+                        <UserContainer />
                     </span>
                 </nav>
             </div>
