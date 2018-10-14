@@ -6,6 +6,9 @@ import NavbarItemsContainer from "./NavbarItemsContainer";
 import NavbarBrand from "./NavbarBrand";
 import MenuItem from "../../_components/Menu/MenuItem";
 
+import langs from "../../_constants/langs.pl";
+import urls from "../../_constants/urls";
+
 import NavbarToggle from "./NavbarToggle";
 
 class Navbar extends Component {
@@ -14,16 +17,20 @@ class Navbar extends Component {
     }
 
     render() {
+        const { currentUser, logout, goToUrl } = this.props;
+
         return (
             <div className="pos-f-t">
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     <NavbarItemsContainer>
-                        <NavbarBrand to="/home">dsa</NavbarBrand>
-                        <NavbarItem to="/register" name="Register" />
-                        <NavbarItem to="/register" name="Register" />
+                        <NavbarBrand to={urls.home}>{langs.labels.appName}</NavbarBrand>
+                        <NavbarItem to={urls.register} name={langs.labels.register} />
+                        <NavbarItem to={urls.login} name={langs.labels.login} />
                     </NavbarItemsContainer>
                     <UserContainer>
-                        <MenuItem name="Wyloguj" action={this.props.logout} />
+                        {currentUser && <MenuItem name={langs.labels.logout} action={logout} />}
+                        <MenuItem name={langs.labels.login} action={() => goToUrl(urls.login)} />
+                        <MenuItem name={langs.labels.register} action={() => goToUrl(urls.register)} />
                     </UserContainer>
                 </nav>
             </div>

@@ -6,6 +6,8 @@ import { Router, Route } from "react-router-dom";
 import { store, history } from "./_helpers";
 import { App } from "./App";
 
+import "./styles/styles.css";
+
 render(
     <Provider store={store}>
         <Router history={history}>

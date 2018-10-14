@@ -25,12 +25,14 @@ class User extends Component {
                     >
                         <i className="far fa-user fa-2x" data-toggle="tooltip" title={userName} />
                     </a>
-                    <div
-                        className="dropdown-menu dropdown-menu-right"
-                        aria-labelledby="navbarDropdownMenuLink"
-                    >
-                        {this.props.children}
-                    </div>
+                    {this.props.children && (
+                        <div
+                            className="dropdown-menu dropdown-menu-right"
+                            aria-labelledby="navbarDropdownMenuLink"
+                        >
+                            {this.props.children}
+                        </div>
+                    )}
                 </div>
             </div>
         );
