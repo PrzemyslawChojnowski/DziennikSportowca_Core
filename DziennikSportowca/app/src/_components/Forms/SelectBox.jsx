@@ -10,9 +10,11 @@ class SelectBox extends Component {
     }
 
     mapOptions() {
-        const { options, name } = this.props;
+        const { options, name, placeholder } = this.props;
 
         let optionsToRender = [];
+        
+        optionsToRender.push(<option disabled selected value>{placeholder}</option>)
 
         options.map((item, index) => {
             optionsToRender.push(

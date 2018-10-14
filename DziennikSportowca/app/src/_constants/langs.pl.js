@@ -61,6 +61,11 @@ const labels = {
 
 const buttons = {};
 
-const langs = { labels, buttons };
+const fields = {
+    SelectAValue: "Wybierz wartość",
+    TypeAValue: "Wprowadź wartość",
+}
+
+const langs = { labels, buttons, fields };
 
 export default langs;
