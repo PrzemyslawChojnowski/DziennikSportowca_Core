@@ -1,7 +1,9 @@
 const urls = {
-    home: "/",
+    default: "/",
+    home: "/home",
     login: "/login",
-    register: "/register"
+    register: "/register",
+    calculators: "/calculators"
 };
 
 export default urls;

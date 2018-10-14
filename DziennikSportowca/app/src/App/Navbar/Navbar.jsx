@@ -24,7 +24,7 @@ class Navbar extends Component {
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     <NavbarItemsContainer>
                         <NavbarBrand to={urls.home}>{langs.labels.appName}</NavbarBrand>
-                        <NavbarItem to={urls.register} name={langs.labels.register} />
+                        <NavbarItem to={urls.calculators} name={langs.labels.calculators} />
                         <NavbarItem to={urls.login} name={langs.labels.login} />
                     </NavbarItemsContainer>
                     <UserContainer>

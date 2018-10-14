@@ -1,5 +1,6 @@
 var path = require("path");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require('webpack');
 
 module.exports = {
     entry: "./src/index.jsx",
@@ -23,8 +24,8 @@ module.exports = {
             {
                 test: /\.css$/,
                 exclude: /node_modules/,
-                use: ['style-loader', 'css-loader'],
-              },
+                use: ["style-loader", "css-loader"]
+            }
         ]
     },
     plugins: [
@@ -32,10 +33,12 @@ module.exports = {
             template: "./src/index.html",
             filename: "index.html",
             inject: "body"
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
-        historyApiFallback: true
+        historyApiFallback: true,
+        hot: true
     },
     externals: {
         // global app config object

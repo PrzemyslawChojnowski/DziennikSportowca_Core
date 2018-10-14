@@ -1,15 +1,12 @@
 import React from "react";
-import { Route } from "react-router-dom";
 import { connect } from "react-redux";
 
 import { history } from "../_helpers";
 import { alertActions } from "../_actions";
-import { PrivateRoute } from "../_components";
-import { HomePage } from "../HomePage";
-import { LoginPage } from "../LoginPage";
-import { RegisterPage } from "../RegisterPage";
+
 import NavbarContainer from "./Navbar/NavbarContainer";
 import NavbarToggle from "./Navbar/NavbarToggle";
+import RoutesContainer from "./RoutesContainer";
 
 class App extends React.Component {
     constructor(props) {
@@ -29,17 +26,14 @@ class App extends React.Component {
                 <NavbarContainer>
                     <NavbarToggle />
                 </NavbarContainer>
+                
                 <div className="jumbotron">
                     <div className="container">
                         <div className="col-sm-8 col-sm-offset-2">
                             {alert.message && (
                                 <div className={`alert ${alert.type}`}>{alert.message}</div>
                             )}
-                            <div>
-                                <PrivateRoute exact path="/" component={HomePage} />
-                                <Route path="/login" component={LoginPage} />
-                                <Route path="/register" component={RegisterPage} />
-                            </div>
+                            <RoutesContainer />
                         </div>
                     </div>
                 </div>

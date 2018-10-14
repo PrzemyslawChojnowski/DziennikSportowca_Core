@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+import { reducer as formReducer } from "redux-form";
 
 import { authentication } from "./authentication.reducer";
 import { registration } from "./registration.reducer";
@@ -9,7 +10,8 @@ const rootReducer = combineReducers({
     authentication,
     registration,
     users,
-    alert
+    alert,
+    form: formReducer
 });
 
 export default rootReducer;
