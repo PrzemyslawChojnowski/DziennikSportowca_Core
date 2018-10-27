@@ -8,6 +8,8 @@ import { App } from "./App";
 
 import "./styles/styles.css";
 
+import "./_helpers/stringExtensions";
+
 render(
     <Provider store={store}>
         <Router history={history}>

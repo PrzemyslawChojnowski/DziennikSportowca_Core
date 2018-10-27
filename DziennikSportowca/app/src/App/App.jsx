@@ -7,6 +7,7 @@ import { alertActions } from "../_actions";
 import NavbarContainer from "./Navbar/NavbarContainer";
 import NavbarToggle from "./Navbar/NavbarToggle";
 import RoutesContainer from "./RoutesContainer";
+import BreadcrumbContainer from "../_components/Breadcrumb";
 
 class App extends PureComponent {
     constructor(props) {
@@ -29,6 +30,7 @@ class App extends PureComponent {
 
                 <div className="jumbotron">
                     <div className="container">
+                        <BreadcrumbContainer />
                         {alert.message && (
                             <div className={`alert ${alert.type}`}>{alert.message}</div>
                         )}
