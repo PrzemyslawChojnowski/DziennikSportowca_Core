@@ -8,4 +8,9 @@ const Col = props => {
     return <div className={className}>{props.children}</div>;
 };
 
+Col.defaultProps = {
+    size: "md",
+    width: 12
+};
+
 export default Col;

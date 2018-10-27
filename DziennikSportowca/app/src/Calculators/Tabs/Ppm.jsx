@@ -38,42 +38,42 @@ class Ppm extends Component {
         this.changeHeight = this.changeHeight.bind(this);
         this.changeAge = this.changeAge.bind(this);
         this.changeGender = this.changeGender.bind(this);
-        this.calculatePPM = this.calculatePPM.bind(this);        
+        this.calculatePPM = this.calculatePPM.bind(this);
     }
 
     changeHeight(e, value) {
-        this.setState({ppmHeight: value});
-        
+        this.setState({ ppmHeight: value });
+
         const { ppmWeight, ppmAge, ppmGender } = this.state;
 
-        if(ppmWeight && value && ppmGender && ppmAge)
+        if (ppmWeight && value && ppmGender && ppmAge)
             this.calculatePPM(ppmWeight, value, ppmAge, ppmGender);
     }
 
     changeWeight(e, value) {
-        this.setState({ppmWeight: value});
+        this.setState({ ppmWeight: value });
 
         const { ppmHeight, ppmAge, ppmGender } = this.state;
 
-        if(value && ppmHeight && ppmGender && ppmAge)
+        if (value && ppmHeight && ppmGender && ppmAge)
             this.calculatePPM(value, ppmHeight, ppmAge, ppmGender);
     }
 
     changeAge(e, value) {
-        this.setState({ppmAge: value});
+        this.setState({ ppmAge: value });
 
         const { ppmHeight, ppmWeight, ppmGender } = this.state;
 
-        if(value && ppmHeight && ppmGender && ppmWeight)
+        if (value && ppmHeight && ppmGender && ppmWeight)
             this.calculatePPM(ppmWeight, ppmHeight, value, ppmGender);
     }
 
     changeGender(e, value) {
-        this.setState({ppmGender: value});
+        this.setState({ ppmGender: value });
 
         const { ppmHeight, ppmWeight, ppmAge } = this.state;
 
-        if(value && ppmHeight && ppmWeight && ppmAge)
+        if (value && ppmHeight && ppmWeight && ppmAge)
             this.calculatePPM(ppmWeight, ppmHeight, ppmAge, value);
     }
 
@@ -81,16 +81,15 @@ class Ppm extends Component {
         if (weight && height && age && gender) {
             let tmpPPM;
 
-            if(gender == genderTypes.woman)
+            if (gender == genderTypes.woman)
                 tmpPPM = 665.09 + 9.56 * weight + 1.85 * height - 4.67 * age;
-            else if(gender == genderTypes.man)
+            else if (gender == genderTypes.man)
                 tmpPPM = 66.47 + 13.75 * weight + 5 * height - 6.75 * age;
 
-            if (tmpPPM < 0)
-                tmpPPM = 0;
+            if (tmpPPM < 0) tmpPPM = 0;
 
-            this.setState({ppmResult: tmpPPM});           
-            this.props.change('ppmResult', tmpPPM);
+            this.setState({ ppmResult: tmpPPM });
+            this.props.change("ppmResult", tmpPPM);
         }
     }
 

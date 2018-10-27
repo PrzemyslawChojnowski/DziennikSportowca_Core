@@ -19,10 +19,18 @@ class CalculatorsPage extends Component {
         return (
             <React.Fragment>
                 <TabsContainer id={"calculators"} defaultIndex={1}>
-                    <Tab name={langs.labels.bmi} id="bmi" index={1}><Bmi /></Tab>
-                    <Tab name={langs.labels.cpm} id="cpm" index={2}><Cpm /></Tab>
-                    <Tab name={langs.labels.pmc} id="pmc" index={3}><Pmc /></Tab>
-                    <Tab name={langs.labels.ppm} id="ppm" index={4}><Ppm /></Tab>
+                    <Tab name={langs.labels.bmi} id="bmi" index={1}>
+                        <Bmi />
+                    </Tab>
+                    <Tab name={langs.labels.cpm} id="cpm" index={2}>
+                        <Cpm />
+                    </Tab>
+                    <Tab name={langs.labels.pmc} id="pmc" index={3}>
+                        <Pmc />
+                    </Tab>
+                    <Tab name={langs.labels.ppm} id="ppm" index={4}>
+                        <Ppm />
+                    </Tab>
                 </TabsContainer>
             </React.Fragment>
         );

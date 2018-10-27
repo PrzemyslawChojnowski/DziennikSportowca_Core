@@ -36,35 +36,38 @@ const labels = {
     Man: "Mężczyzna",
     Woman: "Kobieta",
     PatientLayingInBed: "Pacjent leżący w łóżku",
-    LowActivity: 'Niska aktywność fizyczna',
-    MediumActivity: 'Umiarkowana aktywność fizyczna',
-    BigActivity: 'Aktywny tryb życia',
-    VeryBigActivity: 'Bardzo aktywny tryb życia',
-    ExtremeActivity: 'Wyczynowe uprawianie sportu',
-    Home: 'Strona domowa',
-    ExerciseList: 'Lista ćwiczeń',
-    Calculators: 'Kalkulatory',
-    Contact: 'Kontakt',
-    MessageDescription: 'Treść wiadomości',
-    PhoneNumber: 'Numer telefonu',
-    Email: 'E-mail',
-    NameAndSurname: 'Imię i nazwisko',
-    Action: 'Akcja',
-    Details: 'Szczegóły',
-    Edit: 'Edycja',
-    TrainingPlans: 'Plany treningowe',
-    Delete: 'Usuń',
-    TrainingPlanName: 'Nazwa planu treningowego',
-    ExerciseType: 'Rodzaj ćwiczenia',
-    AddingExercise: 'Dodawanie ćwiczenia',
+    LowActivity: "Niska aktywność fizyczna",
+    MediumActivity: "Umiarkowana aktywność fizyczna",
+    BigActivity: "Aktywny tryb życia",
+    VeryBigActivity: "Bardzo aktywny tryb życia",
+    ExtremeActivity: "Wyczynowe uprawianie sportu",
+    Home: "Strona domowa",
+    ExerciseList: "Lista ćwiczeń",
+    Calculators: "Kalkulatory",
+    Contact: "Kontakt",
+    MessageDescription: "Treść wiadomości",
+    PhoneNumber: "Numer telefonu",
+    Email: "E-mail",
+    NameAndSurname: "Imię i nazwisko",
+    Action: "Akcja",
+    Details: "Szczegóły",
+    Edit: "Edycja",
+    TrainingPlans: "Plany treningowe",
+    Delete: "Usuń",
+    TrainingPlanName: "Nazwa planu treningowego",
+    ExerciseType: "Rodzaj ćwiczenia",
+    AddingExercise: "Dodawanie ćwiczenia",
+    newExercise: "Nowe ćwiczenie",
+    Exercises: "Ćwiczenia",
+    ExerciseList: "Lista",
 };
 
 const buttons = {};
 
 const fields = {
     SelectAValue: "Wybierz wartość",
-    TypeAValue: "Wprowadź wartość",
-}
+    TypeAValue: "Wprowadź wartość"
+};
 
 const langs = { labels, buttons, fields };
 

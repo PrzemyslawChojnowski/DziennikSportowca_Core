@@ -13,8 +13,12 @@ class SelectBox extends Component {
         const { options, name, placeholder } = this.props;
 
         let optionsToRender = [];
-        
-        optionsToRender.push(<option disabled selected value>{placeholder}</option>)
+
+        optionsToRender.push(
+            <option disabled selected value style={{ display: "none" }}>
+                {placeholder}
+            </option>
+        );
 
         options.map((item, index) => {
             optionsToRender.push(

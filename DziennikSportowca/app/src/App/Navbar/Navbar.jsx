@@ -4,6 +4,7 @@ import UserContainer from "./UserContainer";
 import NavbarItem from "./NavbarItem";
 import NavbarItemsContainer from "./NavbarItemsContainer";
 import NavbarBrand from "./NavbarBrand";
+import NavbarDropdown from "./NavbarDropdown";
 import MenuItem from "../../_components/Menu/MenuItem";
 
 import langs from "../../_constants/langs.pl";
@@ -26,11 +27,26 @@ class Navbar extends Component {
                         <NavbarBrand to={urls.home}>{langs.labels.appName}</NavbarBrand>
                         <NavbarItem to={urls.calculators} name={langs.labels.calculators} />
                         <NavbarItem to={urls.login} name={langs.labels.login} />
+                        <NavbarDropdown name={langs.labels.Exercises}>
+                            <NavbarItem
+                                to={urls.newExerciseForm}
+                                name={langs.labels.newExercise}
+                                dropdown
+                            />
+                            <NavbarItem
+                                to={urls.exerciseList}
+                                name={langs.labels.ExerciseList}
+                                dropdown
+                            />
+                        </NavbarDropdown>
                     </NavbarItemsContainer>
                     <UserContainer>
                         {currentUser && <MenuItem name={langs.labels.logout} action={logout} />}
                         <MenuItem name={langs.labels.login} action={() => goToUrl(urls.login)} />
-                        <MenuItem name={langs.labels.register} action={() => goToUrl(urls.register)} />
+                        <MenuItem
+                            name={langs.labels.register}
+                            action={() => goToUrl(urls.register)}
+                        />
                     </UserContainer>
                 </nav>
             </div>

@@ -9,7 +9,7 @@ import NumericBox from "../../_components/Forms/NumericBox";
 import TextBox from "../../_components/Forms/TextBox";
 import SelectBox from "../../_components/Forms/SelectBox";
 
-//redux-form field
+//redux-form fields
 const ReduxNumericBoxField = asReduxFormsField()(NumericBox);
 const ReduxTextBoxField = asReduxFormsField()(TextBox);
 const ReduxSelectBoxField = asReduxFormsField()(SelectBox);
