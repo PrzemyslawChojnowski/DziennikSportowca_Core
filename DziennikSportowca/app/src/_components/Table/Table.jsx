@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
-class Table extends Component {
+class Table extends PureComponent {
     constructor(props) {
         super(props);
 
@@ -27,7 +27,6 @@ class Table extends Component {
                 tableClassName += `table-responsive-${tableOptions.size} `;
             else if (!tableOptions.size && tableOptions.responsive)
                 tableClassName += `table-responsive `;
-            // if (tableOptions.dark) tableClassName += "table-dark ";
         }
 
         return tableClassName;
@@ -57,9 +56,11 @@ class Table extends Component {
 
     mapRows() {
         const { children, items } = this.props;
+        const checkItems = items && Array.isArray(items) && items.length > 0;
         let i = 0;
+        
         return (
-            items &&
+            checkItems &&
             items.map(function(item, itemIndex) {
                 const row = (
                     <tr key={`${i}.${itemIndex}`}>
@@ -86,27 +87,7 @@ class Table extends Component {
                 <thead className={this.state.headClassName}>
                     <tr>{this.mapColumns()}</tr>
                 </thead>
-                <tbody>
-                    {this.mapRows()}
-                    {/* <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr> */}
-                </tbody>
+                <tbody>{this.mapRows()}</tbody>
             </table>
         );
     }

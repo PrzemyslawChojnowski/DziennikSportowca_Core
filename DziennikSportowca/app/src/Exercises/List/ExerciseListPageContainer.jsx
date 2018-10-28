@@ -5,16 +5,13 @@ import * as actions from "./actions";
 const mapStateToProps = (state, ownProps) => {
     return {
         currentUser: state.authentication.user,
-        id: ownProps
+        items: state.exercise.list.exercises || []
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        onCreate: model => dispatch(actions.createExercise(model)),
-        onUpdate: model => dispatch(actions.updateExercise(model)),
-        onGet: id => dispatch(actions.getExercise(id)),
-        onDelete: id => dispatch(actions.deleteExercise(id))
+        onGetPage: criteria => dispatch(actions.getExerciseList(criteria))
     };
 };
 

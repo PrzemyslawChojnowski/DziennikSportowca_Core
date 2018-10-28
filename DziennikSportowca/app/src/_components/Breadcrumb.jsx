@@ -10,7 +10,6 @@ class Breadcrumb extends PureComponent {
 
     mapRouteParts(location) {
         if (location && location.pathname) {
-            debugger;
             const locationParts = location.pathname.split("/");
             let actualPath = "/";
             if (locationParts.length > 0) {
