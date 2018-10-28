@@ -18,23 +18,30 @@ class Button extends PureComponent {
             outline,
             size,
             block,
+            float,
             ...otherProps
         } = this.props;
 
         let buttonClassName = "btn ";
         if (size) buttonClassName += `btn-${size} `;
         if (block) buttonClassName += "btn-block ";
-        if (type) buttonClassName += `btn-${outline && "outline-"}${type} `;
+        if (type) buttonClassName += `btn-${outline ? "outline-" : ""}${type} `;
         if (className) buttonClassName += `${className} `;
+        if (float) buttonClassName += `float-${float}`;
         if (customClassName) buttonClassName = customClassName;
 
         return !modal ? (
-            <button type="button" className={buttonClassName} onClick={onClick} {...otherProps}> 
+            <button
+                type="button float-right"
+                className={buttonClassName}
+                onClick={onClick}
+                {...otherProps}
+            >
                 {children}
             </button>
         ) : (
             <button
-                type="button"
+                type="button float-right"
                 className={buttonClassName}
                 data-dismiss="modal"
                 onClick={onClick}
@@ -66,11 +73,13 @@ Button.propTypes = {
     ariaLabel: PropTypes.string,
     outline: PropTypes.bool,
     size: PropTypes.oneOf(["sm", "lg", ""]),
-    block: PropTypes.bool
+    block: PropTypes.bool,
+    float: PropTypes.oneOf(["left", "right", "none"])
 };
 
 Button.defaultProps = {
-    ariaLabel: ""
+    ariaLabel: "",
+    float: "none"
 };
 
 export default Button;

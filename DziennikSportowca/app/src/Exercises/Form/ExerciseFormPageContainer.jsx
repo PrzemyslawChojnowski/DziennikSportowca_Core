@@ -5,16 +5,19 @@ import * as actions from "./actions";
 const mapStateToProps = (state, ownProps) => {
     return {
         currentUser: state.authentication.user,
-        formDisplayType: ownProps.formDisplayType,
+        formDisplayType: ownProps.formDisplayType
     };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         onCreate: model => dispatch(actions.createExercise(model)),
         onUpdate: model => dispatch(actions.updateExercise(model)),
         onGet: id => dispatch(actions.getExercise(id)),
-        onDelete: id => dispatch(actions.deleteExercise(id))
+        onDelete: id => dispatch(actions.deleteExercise(id)),
+
+        afterSubmit: data => ownProps.afterSubmit(data),
+        onCloseOnModal: () => ownProps.onClose(),
     };
 };
 

@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return {
         onGetPage: criteria => dispatch(actions.getExerciseList(criteria)),
-        initializeForm: (formName, data) => dispatch(initialize(formName, data))
+        initializeForm: (formName, data) => dispatch(initialize(formName, data)),
     };
 };
 

@@ -31,6 +31,8 @@ class ExerciseListPage extends PureComponent {
         this.onPreviewItem = this.onOpenItem.bind(this, accessModes.preview, "Preview exercise");
         this.onDeleteItem = this.onOpenItem.bind(this, accessModes.delete, "Delete exercise");
         this.onCloseEditModal = this.onCloseEditModal.bind(this);
+
+        this.afterFormSubmit = this.afterFormSubmit.bind(this);
     }
 
     componentWillMount() {
@@ -57,29 +59,44 @@ class ExerciseListPage extends PureComponent {
         });
     }
 
+    afterFormSubmit() {
+        this.setState({
+            focusedRow: {},
+            showEditModal: false,
+            formDisplayType: accessModes.create,
+            modalTitle: "Create exercise"
+        });
+    }
+
     render() {
         return (
             <React.Fragment>
                 <Row>
                     <Col>
-                        <Button
-                            onClick={() => this.setState({ showEditModal: true })}
-                            {...exerciseModalProps}
-                        >
-                            Open
-                        </Button>
                         <Modal
                             name="exerciseModal"
                             show={this.state.showEditModal}
                             onClose={this.onCloseEditModal}
                             header={this.state.modalTitle || ""}
+                            withoutFooter
                             body={
                                 <ExerciseFormPageContainer
                                     formDisplayType={this.state.formDisplayType}
+                                    afterSubmit={this.afterFormSubmit}
+                                    onClose={this.onCloseEditModal}
                                 />
                             }
                         />
                         <Accordion header="Exercise list">
+                            <Button
+                                onClick={() => this.setState({ showEditModal: true })}
+                                {...exerciseModalProps}
+                                float="right"
+                                type="success"
+                                outline
+                            >
+                                <FontAwesome icon="plus" /> Create
+                            </Button>
                             <Table
                                 tableOptions={{
                                     striped: true,
