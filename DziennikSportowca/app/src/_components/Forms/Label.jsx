@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 
 const Label = props => {
-    return <label htmlFor={props.htmlFor}>{props.children}</label>;
+    return (
+        <strong>
+            <label htmlFor={props.htmlFor}>{`${props.children}${!props.withoutColon &&
+                ":"}`}</label>
+        </strong>
+    );
 };
 
 export default Label;

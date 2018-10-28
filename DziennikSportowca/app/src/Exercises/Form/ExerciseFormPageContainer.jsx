@@ -2,10 +2,10 @@ import { connect } from "react-redux";
 import ExerciseFormPage from "./ExerciseFormPage";
 import * as actions from "./actions";
 
-const mapStateToProps = (state, ownProps) => {debugger
+const mapStateToProps = (state, ownProps) => {
     return {
         currentUser: state.authentication.user,
-        id: ownProps
+        formDisplayType: ownProps.formDisplayType,
     };
 };
 

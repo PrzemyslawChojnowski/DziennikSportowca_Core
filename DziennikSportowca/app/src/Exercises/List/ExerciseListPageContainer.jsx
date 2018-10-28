@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { initialize } from "redux-form";
 import ExerciseListPage from "./ExerciseListPage";
 import * as actions from "./actions";
 
@@ -11,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onGetPage: criteria => dispatch(actions.getExerciseList(criteria))
+        onGetPage: criteria => dispatch(actions.getExerciseList(criteria)),
+        initializeForm: (formName, data) => dispatch(initialize(formName, data))
     };
 };
 

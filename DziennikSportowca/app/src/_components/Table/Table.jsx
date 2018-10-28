@@ -58,7 +58,7 @@ class Table extends PureComponent {
         const { children, items } = this.props;
         const checkItems = items && Array.isArray(items) && items.length > 0;
         let i = 0;
-        
+
         return (
             checkItems &&
             items.map(function(item, itemIndex) {
@@ -66,11 +66,19 @@ class Table extends PureComponent {
                     <tr key={`${i}.${itemIndex}`}>
                         {children &&
                             children.map(function(column, columnIndex) {
-                                return (
-                                    <td key={`${i}.${itemIndex}.${columnIndex}`}>
-                                        {item[column.props.name]}
-                                    </td>
-                                );
+                                if (column.props.format) {
+                                    return (
+                                        <td key={`${i}.${itemIndex}.${columnIndex}`}>
+                                            {column.props.format(item)}
+                                        </td>
+                                    );
+                                } else {
+                                    return (
+                                        <td key={`${i}.${itemIndex}.${columnIndex}`}>
+                                            {item[column.props.name]}
+                                        </td>
+                                    );
+                                }
                             })}
                     </tr>
                 );
