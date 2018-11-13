@@ -17,6 +17,6 @@ export default {
     },
 
     loader: {
-        isActive: true
+        isActive: false
     },
 };

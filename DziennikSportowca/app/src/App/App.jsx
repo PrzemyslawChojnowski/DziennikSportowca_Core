@@ -8,16 +8,6 @@ import NavbarContainer from "./Navbar/NavbarContainer";
 import NavbarToggle from "./Navbar/NavbarToggle";
 import RoutesContainer from "./RoutesContainer";
 import BreadcrumbContainer from "../_components/Breadcrumb";
-import CubeLoader from "../_components/Loaders/CubeLoader";
-import CubeSpinnerLoader from "../_components/Loaders/CubeSpinnerLoader";
-import BallSpinnerLoader from "../_components/Loaders/BallSpinnerLoader";
-import RectangleSpinnerLoader from "../_components/Loaders/RectangleSpinnerLoader";
-import RotatingCubesSpinnerLoader from "../_components/Loaders/RotatingCubesSpinnerLoader";
-import PulseBallLoader from "../_components/Loaders/PulseBallLoader";
-import RotatingBallsLoader from "../_components/Loaders/RotatingBallsLoader";
-import BounceDotsLoader from "../_components/Loaders/BounceDotsLoader";
-import CircleLoader from "../_components/Loaders/CircleLoader";
-import FadingCircleLoader from "../_components/Loaders/FadingCircleLoader";
 import FoldingCubeLoader from "../_components/Loaders/FoldingCubeLoader";
 
 class App extends PureComponent {

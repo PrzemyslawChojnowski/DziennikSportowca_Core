@@ -27,9 +27,11 @@ function rememberLoadedExercises(exercises) {
 
 export function getExerciseList(criteria) {
     return function(dispatch) {
-        return ExerciseService.getExericseList(criteria).then(result => {
+        dispatch({ type: TURN_ON_LOADER });
+        return ExerciseService.getExerciseList(criteria).then(result => {
             dispatch(rememberSearchFilter(result.searchCriteria));
             dispatch(rememberLoadedExercises(result.exercises));
+            setTimeout(() => dispatch({ type: TURN_OFF_LOADER }), 2000);
         });
     };
 }

@@ -26,7 +26,7 @@ class ExerciseService {
         return axios.delete(`${routePrefix}/${id}`);
     }
 
-    static getExericseList(criteria) {
+    static getExerciseList(criteria) {
         return axios.post(`${routePrefix}/list`, criteria).then(returnData);
     }
 }
