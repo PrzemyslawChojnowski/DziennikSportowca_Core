@@ -38,6 +38,18 @@ class Navbar extends Component {
                                 name={langs.labels.ExerciseList}
                                 dropdown
                             />
+                            <NavbarItem
+                                to={"exercise/1"}
+                                name={langs.labels.newExercise}
+                                dropdown
+                            />
+                        </NavbarDropdown>
+                        <NavbarDropdown name={langs.labels.FoodProducts}>
+                            <NavbarItem
+                                to={urls.foodProductsList}
+                                name={langs.labels.List}
+                                dropdown
+                            />
                         </NavbarDropdown>
                     </NavbarItemsContainer>
                     <UserContainer>

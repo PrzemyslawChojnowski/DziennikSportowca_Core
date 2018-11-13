@@ -17,6 +17,8 @@
   <ItemGroup>
     <ProjectReference Include="..\DziennikSportowca.Commons\DziennikSportowca.Commons.csproj" />
     <ProjectReference Include="..\DziennikSportowca.EntityFramework\DziennikSportowca.EntityFramework.csproj" />
+    <ProjectReference Include="..\DziennikSportowca.Facades\DziennikSportowca.Facades.csproj" />
+    <ProjectReference Include="..\DziennikSportowca.Interfaces.Facades\DziennikSportowca.Interfaces.Facades.csproj" />
   </ItemGroup>
 
 </Project>

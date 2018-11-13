@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using DziennikSportowca.Commons.Models.Exercise;
 using DziennikSportowca.Commons.Models.SearchCriteria;
+using DziennikSportowca.Interfaces.Facades;
+using DziennikSportowca.Models.ExerciseVM;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,46 +16,47 @@ namespace DziennikSportowca.Controllers.ApiControllers
     [ApiController]
     public class ExerciseController : BaseController
     {
-        public ExerciseController()
+        private IExerciseFcd _exerciseFcd;
+        private IMapper _mapper;
+
+        public ExerciseController(
+            IExerciseFcd exerciseFcd, 
+            IMapper mapper)
         {
+            _exerciseFcd = exerciseFcd;
+            _mapper = mapper;
         }
 
         [HttpPost("")]
-        public ActionResult CreateExercise()
+        public ActionResult CreateExercise(ExerciseVM model)
         {
-            return Ok("Create");
+            return Ok(_exerciseFcd.CreateExercise(_mapper.Map < Exercise >(model)));
         }
 
         [HttpGet("{id}")]
         public ActionResult GetExercise(int id)
         {
-            return Ok(new { Id = id, Name = "Ćwiczenie 1", ActivitType = "Aktywność 1" });
+            return Ok(_mapper.Map<ExerciseVM>(_exerciseFcd.GetExercise(id)));
         }
 
         [HttpPut("")]
-        public ActionResult UpdateExercise()
+        public ActionResult UpdateExercise(ExerciseVM exercise)
         {
-            return Ok("Update");
+            _exerciseFcd.UpdateExercise(_mapper.Map<Exercise>(exercise));
+            return Ok(exercise.Id);
         }
 
         [HttpDelete("{id}")]
         public ActionResult DeleteExercise(int id)
         {
-            return Ok("Delete");
+            _exerciseFcd.DeleteExercise(id);
+            return Ok(id);
         }
 
         [HttpPost("list")]
         public ActionResult GetExerciseList(ExerciseSearchCriteria criteria)
         {
-            List<dynamic> list = new List<dynamic>();
-            list.Add(new { Id = 1, ExerciseName = "Exercise 1", ActivityType = "Activity 1" });
-            list.Add(new { Id = 2, ExerciseName = "Exercise 2", ActivityType = "Activity 2" });
-            list.Add(new { Id = 3, ExerciseName = "Exercise 3", ActivityType = "Activity 3" });
-            list.Add(new { Id = 4, ExerciseName = "Exercise 4", ActivityType = "Activity 4" });
-            list.Add(new { Id = 5, ExerciseName = "Exercise 5", ActivityType = "Activity 5" });
-            list.Add(new { Id = 6, ExerciseName = "Exercise 6", ActivityType = "Activity 6" });
-
-            return Ok(new { SearchCriteria = criteria, Exercises = list });
+            return Ok(_exerciseFcd.GetList(criteria));
         }
     }
 }

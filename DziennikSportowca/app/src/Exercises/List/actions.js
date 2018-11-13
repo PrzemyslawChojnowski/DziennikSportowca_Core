@@ -1,5 +1,11 @@
+import lodash from "lodash";
 import ExerciseService from "../../_services/ExerciseService";
-import { EXERCISE_REPOSITORY_SEARCH, EXERCISES_LOAD } from "../../_constants/actionTypes";
+import {
+    EXERCISE_REPOSITORY_SEARCH,
+    EXERCISES_LOAD,
+    TURN_ON_LOADER,
+    TURN_OFF_LOADER
+} from "../../_constants/actionTypes";
 
 function rememberSearchFilter(filter) {
     return function(dispatch) {
@@ -7,7 +13,7 @@ function rememberSearchFilter(filter) {
             type: EXERCISE_REPOSITORY_SEARCH,
             filter
         });
-    }
+    };
 }
 
 function rememberLoadedExercises(exercises) {
@@ -15,15 +21,15 @@ function rememberLoadedExercises(exercises) {
         dispatch({
             type: EXERCISES_LOAD,
             exercises
-        })
-    }
+        });
+    };
 }
 
 export function getExerciseList(criteria) {
     return function(dispatch) {
         return ExerciseService.getExericseList(criteria).then(result => {
             dispatch(rememberSearchFilter(result.searchCriteria));
-            dispatch(rememberLoadedExercises(result.exercises))
+            dispatch(rememberLoadedExercises(result.exercises));
         });
     };
 }

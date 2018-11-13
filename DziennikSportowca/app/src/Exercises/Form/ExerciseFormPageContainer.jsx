@@ -1,11 +1,12 @@
 import { connect } from "react-redux";
 import ExerciseFormPage from "./ExerciseFormPage";
 import * as actions from "./actions";
+import accessModes from "../../_constants/accessModes";
 
 const mapStateToProps = (state, ownProps) => {
     return {
         currentUser: state.authentication.user,
-        formDisplayType: ownProps.formDisplayType
+        formDisplayType: accessModes.create || ownProps.formDisplayType
     };
 };
 

@@ -11,6 +11,9 @@ const urls = {
     exerciseEditForm: id => `/exercise/edit/${id}`,
     exerciseDeleteForm: id => `/exercise/delete/${id}`,
     exerciseList: "/exercises",
+
+    //FoodProducts
+    foodProductsList: "/foodProducts"
 };
 
 export default urls;

@@ -60,6 +60,8 @@ const labels = {
     newExercise: "Nowe ćwiczenie",
     Exercises: "Ćwiczenia",
     ExerciseList: "Lista",
+    FoodProducts: "Produkty żywieniowe",
+    List: "Lista"
 };
 
 const buttons = {};

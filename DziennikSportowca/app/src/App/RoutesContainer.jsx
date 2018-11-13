@@ -8,6 +8,7 @@ import { RegisterPage } from "../RegisterPage";
 import CalculatorsPageContainer from "../Calculators/CalculatorsPageContainer";
 import ExerciseFormPageContainer from "../Exercises/Form/ExerciseFormPageContainer";
 import ExerciseListPageContainer from "../Exercises/List/ExerciseListPageContainer";
+import FoodProductsListPageContainer from "../FoodProducts/List/FoodProductsListPageContainer";
 
 import urls from "../_constants/urls";
 
@@ -35,6 +36,12 @@ const RoutesContainer = props => {
                 <Route
                     path={urls.exerciseList}
                     component={ExerciseListPageContainer}
+                />
+
+                {/* FoodProducts */}
+                <Route
+                    path={urls.foodProductsList}
+                    component={FoodProductsListPageContainer}
                 />
             </Switch>
         </main>

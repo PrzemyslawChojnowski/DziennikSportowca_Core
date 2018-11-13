@@ -6,6 +6,7 @@ import { registration } from "./registration.reducer";
 import { users } from "./users.reducer";
 import { alert } from "./alert.reducer";
 import exerciseReducer from "../Exercises/reducer";
+import loaderReducer from "../_components/Loaders/reducer";
 
 const rootReducer = combineReducers({
     authentication,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
     users,
     alert,
     form: formReducer,
-    exercise: exerciseReducer
+    exercise: exerciseReducer,
+    loader: loaderReducer
 });
 
 export default rootReducer;

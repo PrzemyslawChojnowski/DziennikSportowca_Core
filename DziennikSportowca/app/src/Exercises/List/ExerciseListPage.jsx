@@ -108,7 +108,7 @@ class ExerciseListPage extends PureComponent {
                                 caption={"Exercise List"}
                             >
                                 <TableColumn name={"id"} label={"Id"} />
-                                <TableColumn name={"exerciseName"} label={"Name"} />
+                                <TableColumn name={"name"} label={"Name"} />
                                 <TableColumn name={"activityType"} label={"Type"} />
                                 <TableColumn
                                     name={"actions"}

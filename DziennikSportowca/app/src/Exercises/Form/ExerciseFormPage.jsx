@@ -18,7 +18,7 @@ class ExerciseFormPage extends PureComponent {
     }
 
     componentWillMount() {
-        // this.props.onGet(1);
+        this.props.onGet(1);
     }
 
     switchSubmitMethod(model) {
@@ -52,7 +52,7 @@ class ExerciseFormPage extends PureComponent {
                     />
                     <FormGroup
                         label={<Label>Exercise name</Label>}
-                        input={<TextBoxField name="exerciseName" plaintext={isPlaintext} />}
+                        input={<TextBoxField name="name" plaintext={isPlaintext} />}
                     />
                     <FormGroup
                         label={<Label>Activity type</Label>}

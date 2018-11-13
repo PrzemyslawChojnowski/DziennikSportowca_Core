@@ -29,5 +29,8 @@ namespace DziennikSportowca.EntityFramework.Data
         }
 
         public DbSet<tUser> Users { get; set; }
+        public DbSet<tExercise> Exercises { get; set; }
+        public DbSet<tDictionary> Dictionaries { get; set; }
+        public DbSet<tDictionaryItem> DictionaryItems { get; set; }
     }
 }

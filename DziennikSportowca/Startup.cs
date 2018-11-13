@@ -19,6 +19,9 @@ using Microsoft.IdentityModel.Tokens;
 using DziennikSportowca.Interfaces.Services;
 using DziennikSportowca.EntityFramework.Services;
 using DziennikSportowca.Models.UserVM;
+using DziennikSportowca.Interfaces.Facades;
+using DziennikSportowca.Facades;
+using DziennikSportowca.Models.ExerciseVM;
 
 namespace DziennikSportowca
 {
@@ -44,7 +47,7 @@ namespace DziennikSportowca
 
 
             //Facades
-            //services.AddScoped<IFcd, FcdImplementation>();
+            services.AddScoped<IExerciseFcd, ExerciseFcd>();
 
             //Sets Cross-Origin Resource Sharing. MUST BE SET BEFORE services.AddMvc() !!!
             services.AddCors();
@@ -55,6 +58,7 @@ namespace DziennikSportowca
             var config = new AutoMapper.MapperConfiguration(cfg =>
             {
                 cfg.AddProfile(new UserProfile());
+                cfg.AddProfile(new ExerciseProfile());
             });
 
             var mapper = config.CreateMapper();
@@ -102,6 +106,7 @@ namespace DziennikSportowca
 
             // configure DI for application services
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IExerciseSrv, ExerciseSrv>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
